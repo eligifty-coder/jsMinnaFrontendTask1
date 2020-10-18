@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+;
+:root{
+   /* brown */
+   --clr-primary-3: hsl(43, 72%, 37%);
+   --clr-primary-4: hsl(42, 63%, 48%);
+   --clr-primary-5: hsl(42, 78%, 60%);
+   --clr-primary-10: hsl(45, 100%, 96%);
+   /* dark blue */
+   --clr-grey-1: hsl(209, 61%, 16%);
+   --clr-grey-5: hsl(210, 22%, 49%);
+   /* light blue */
+   --clr-grey-4: hsl(209, 28%, 39%);
+   --clr-grey-10: hsl(210, 36%, 96%);
+   --transition: all 0.3s linear;
+   --max-width: 1170px;
+   /* font */
+   --ff-primary: "Roboto", sans-serif;
+   --ff-secondary: "Open Sans", sans-serif;
+   --spacing: 0.25rem
+}
+*,
+::after,
+::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family:  "Open Sans", sans-serif;
+   background:#fff;
+   color: hsl(209, 61%, 16%);
+   line-height: 1.5;
+   font-size: 0.875rem;
+}
+a {
+   text-decoration: none;
+}
+
+li {
+   list-style: none;
+}
+.section {
+   padding: 2rem 0;
+}
+
+.section-center {
+   width: 90vw;
+   margin: 0 auto;
+   max-width: 1170px;
+}
+
+@media screen and (min-width: 992px) {
+   .section-center {
+      width: 95vw;
+   }
+}
+
+a{
+   color: var(--clr-grey-4);
+}
+#nav ul{
+   display: none;
+}
+#nav div{
+   display: grid;
+   grid-template-columns:auto 1fr;
+   align-items: center;
+}
+.navBtn{
+   justify-self: end;
+   font-size: 2rem;
+   background: transparent;
+   border: none;
+   outline: none;
+   color:hsl(42, 78%, 60%);
+}
+.sideBar{
+   width: 100%;
+   height: 100vh;
+   position: absolute;
+   z-index: 2;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background:hsl(210, 36%, 96%);
+   display: grid;
+   place-items: center;
+   transition: all 0.3s linear;
+   transform: translateX(-100%);
+   z-index: 1;
+}
+.showSidebar{
+   transform: translateX(0);
+}
+.closeBtn{
+   position: absolute;
+   top: 1rem;
+   right: 1rem;
+   background: transparent;
+   border: transparent;
+   color: #bb2525;
+   font-size: 3rem;
+   cursor: pointer;
+   outline: none;
+   transition: all 0.3s linear;
+}
+
+.closeBtn:hover {
+   color: #e66b6b;
+}
+.sideBar ul li{
+   list-style: none;
+}
+.sideBar a{
+   font-size: 2rem;
+   transition: all 0.3s linear;
+   text-transform: capitalize;
+   display: inline-block;
+   margin-bottom: 1.5rem;
+   color: hsl(210, 22%, 49%);
+   letter-spacing: 0.25rem;
+   text-decoration: none;
+}
+.icons{
+   display: grid;
+   grid-template-columns: repeat(5,1fr);
+   width: 20rem;
+   margin-top: 3rem;
+   align-self: start;
+}
+.icons a{
+   color: hsl(209, 61%, 16%);
+   transition: all 0.3s linear;
+   font-size: 1.5rem;
+}
+.icons a:hover,
+.sideBar a:hover{
+   color:hsl(42, 78%, 60%);
+}
+/* navbar fixed */
+.navbarFixed{
+   width: 100%;
+   top: o;
+   left: 0;
+   position: fixed;
+   z-index: 1111;
+   background: #fff;
+   box-shadow:0 5px 15px rgba(0, 0, 0, 0.1);
+}
+@media screen and (min-width:768px) {
+   #nav{
+      background: hsl(45, 100%, 96%);
+      height: 5rem;
+   }
+   .navBtn{
+      display: none;
+   }
+   #nav ul {
+      display: block;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      place-items: center;
+      justify-self: flex-end;
+      column-gap: 2rem;
+   }
+   #nav a{
+      text-transform: capitalize;
+      font-weight: bold;
+      transition: all 0.3s linear;
+      letter-spacing: 0.25rem;
+      color: hsl(209, 61%, 16%);
+      font-size: 1rem;
+   }
+   #nav a:hover{
+      color: hsl(42, 78%, 60%);
+   }
+}
+/* header */
+header{
+   background-color: hsl(45, 100%, 96%);
+}
+.hero-center {
+   height: calc(100vh - 10rem);
+   display: grid;
+   place-items: center;
+}
+.hero-center h1 {
+   font-size: 3rem;
+   position: relative;
+   font-family: "Roboto",
+   sans-serif;
+}
+.hero-center h1::before{
+   width: 5rem;
+   height: 0.25rem;
+   margin-bottom: 1.25rem;
+   position: absolute;
+   background: hsl(42, 78%, 60%);
+   content: "";
+   margin-left: auto;
+   margin-right: auto;
+}
+.hero-center h4 {
+   color: hsl(210, 22%, 49%);
+   text-transform: capitalize;
+   line-height: 1.25;
+   margin-bottom: 0.75rem;
+   font-family: "Roboto",
+   sans-serif;
+   letter-spacing: 0.25rem;
+}
+.hero-center .image{
+   display: none
+}
+.header-btn{
+   margin-top: 1.25rem;
+   text-transform: uppercase;
+   background: hsl(42, 78%, 60%);
+   border-radius: 0.5rem;
+   padding: 0.375rem 0.75rem;
+   display: inline-block;
+   font-weight: 700;
+   font-size: 0.875rem;
+   border: 2px solid transparent;
+   cursor: pointer;
+   transition: all 0.3s linear;
+   letter-spacing: 0.25rem;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.header-btn:hover{
+   color: hsl(43, 86%, 17%);
+   background-color: hsl(43, 90%, 76%);
+}
+@media screen and (min-width:992px) {
+   .hero-center h1::before {
+      top: -10px;
+   }
+   .hero-center h1{
+      font-size: 4rem;
+      line-height: 1;
+   }
+   .hero-center{
+      grid-template-columns: repeat(2,1fr);
+      padding-bottom: 10rem;
+   }
+   .hero-center .image {
+      max-width: 20rem;
+      max-height: 30rem;
+      display: block;
+      align-self: start;
+      position: relative;
+   }
+   .hero-center .image img {
+      position: relative;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 0.5rem;
+   }
+   .hero-center .image::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.5rem;
+      border: 0.25rem solid hsl(42, 78%, 60%);
+      top: 2rem;
+      right: -2rem;
+   }
+   .hero-center .image::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 0.5rem;
+      background-color: transparent;
+   }
+   .hero-center .image:hover::after {
+      background: linear-gradient(rgb(0, 0, 0, .5), hsl(42, 78%, 60%,.3));
+   }
+}
+/* blinking cursor for my typewriting Function */
+.cursor{
+   background-color: hsl(42, 78%, 60%);
+   width: 1px;
+   display: inline-block;
+   margin-left: 0.1rem;
+   animation: blink 1s linear infinite;
+}
+@keyframes blink{
+   0%{
+      opacity: 1;
+   }
+
+   49% {
+      opacity: 1;
+   }
+
+   50% {
+      opacity: 0;
+   }
+
+   99% {
+      opacity: 0;
+   }
+
+   100% {
+      opacity: 1;
+   }
+}
+/*end header */
